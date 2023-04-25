@@ -62,7 +62,7 @@ jdbc 6 버전을 찾아넣기
 ![image](https://user-images.githubusercontent.com/104752580/234205662-d29f6d56-1c89-44c5-8f53-407b6b20867f.png)
 ![image](https://user-images.githubusercontent.com/104752580/234205773-d7c4ff90-38d8-4b45-b1eb-9ebd1b08dce1.png)
 ![image](https://user-images.githubusercontent.com/104752580/234205853-e56d8b58-8b03-4a41-95e5-801202c6193a.png)
-![image](https://user-images.githubusercontent.com/104752580/234207149-f4b61484-6b25-40ed-ac2b-c8ff3fc01f68.png)
+![image](https://user-images.githubusercontent.com/104752580/234207489-8979b3c5-23eb-42f3-a743-0eb2ab3559df.png)
 
 입력
 ### 7. 홈페이지 제작
