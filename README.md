@@ -53,3 +53,17 @@ css,html,jsp 파일 모두 utf-8로 설정하고 apply and close를 누른다.
 
 ### 6. jsp에서 db연결
 ![image](https://user-images.githubusercontent.com/104752580/234204939-94ca967c-4ad1-4e91-b53f-cbbffb9db068.png)
+![image](https://user-images.githubusercontent.com/104752580/234205235-25388232-c4ba-4304-8ed1-13f14b0014b1.png)
+![image](https://user-images.githubusercontent.com/104752580/234205371-257060fc-d3f6-4f0f-94b7-1d6adb3979b3.png)
+
+jdbc 6 버전을 찾아넣기
+
+![image](https://user-images.githubusercontent.com/104752580/234205564-b9b9239e-4c10-46a3-9a30-8e54ef906391.png)
+![image](https://user-images.githubusercontent.com/104752580/234205662-d29f6d56-1c89-44c5-8f53-407b6b20867f.png)
+![image](https://user-images.githubusercontent.com/104752580/234205773-d7c4ff90-38d8-4b45-b1eb-9ebd1b08dce1.png)
+![image](https://user-images.githubusercontent.com/104752580/234205853-e56d8b58-8b03-4a41-95e5-801202c6193a.png)
+![image](https://user-images.githubusercontent.com/104752580/234206154-aab44f65-fa2d-4e04-8f87-79501bb8a3a5.png)
+
+입력
+### 7. 홈페이지 제작
+
