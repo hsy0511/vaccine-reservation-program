@@ -97,7 +97,7 @@ css를 사용하기 위해서 미리 class를 설정해 두는게 좋습니다.
 <title>Insert title here</title>
 </head>
 <body>
-<header class = "class">
+<header class = "header">
 <h1>(과정평가형 정보처리산업기사) 백신예약 프로그램 ver 202109</h1>
 </header>
 </body>
