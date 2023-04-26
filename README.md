@@ -757,3 +757,12 @@ sum += Integer.parseInt(rs.getString(3));
 ```
  
  모든 페이지가 정상 작동하는지 검토합니다.
+![image](https://user-images.githubusercontent.com/104752580/234508064-730cff0f-f088-471d-9928-3734cfcd944d.png)
+![image](https://user-images.githubusercontent.com/104752580/234508121-31d1a8ea-b8e6-4250-842a-611c877846bd.png)
+![image](https://user-images.githubusercontent.com/104752580/234508203-3877be36-80f8-4063-b30f-bb5a5cbbed86.png)
+![image](https://user-images.githubusercontent.com/104752580/234508269-34198cdf-5318-4738-87eb-e96d16b1d94d.png)
+![image](https://user-images.githubusercontent.com/104752580/234508345-e29283fe-a1c6-4d91-8745-51a329194e72.png)
+![image](https://user-images.githubusercontent.com/104752580/234508393-10281f5a-7238-41b2-856c-6e4902963d9c.png)
+
+
+
