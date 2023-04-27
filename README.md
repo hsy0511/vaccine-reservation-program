@@ -4,15 +4,18 @@
 ### 1. 오라클 11g 설치 (설치파일 있음)
 ### 2. 톰캣 8.0 설치
 구글에 톰캣 검색 후 절차대로 진행하여 설치
+
 ![image](https://user-images.githubusercontent.com/104752580/234200374-175d9f33-308f-4d51-ae8a-ebbabf31c4ad.png)
 ![image](https://user-images.githubusercontent.com/104752580/234200539-b1dc4860-3b4a-45f1-8e2c-57e8654efb82.png)
 ### 3. jdbc 6 설치 (설치파일 있음)
 ### 4. jdk,jre 1.8.0_191 설치
 www.oracle.com/java/technologies 사이트 접속 후 절차대로 진행하여 설치
+
 ![image](https://user-images.githubusercontent.com/104752580/234199922-e92b09f8-36f9-491f-b079-ad1c2980a091.png)
 ![image](https://user-images.githubusercontent.com/104752580/234200039-e55fe9ba-2f52-4aa5-ba22-0ac743050a7a.png)
 ### 5. 이클립스 설치
 구글에 이클립스 다운로드 검색 후 절차대로 진행하여 설치
+
 ![image](https://user-images.githubusercontent.com/104752580/234200954-031485e3-2410-4310-91ef-1631e2e1cef4.png)
 ![image](https://user-images.githubusercontent.com/104752580/234200994-6869331d-2410-4673-a37f-bca4fef76bd3.png)
 ![image](https://user-images.githubusercontent.com/104752580/234201046-498fb334-119d-4c7c-8529-49d76dd471d0.png)
@@ -67,6 +70,7 @@ jdbc 6 버전을 찾아넣기
 입력
 ## 홈페이지 제작
 ![image](https://user-images.githubusercontent.com/104752580/234481911-e188a0fe-dfa7-4113-ab6f-ded30eab6842.png)
+
 webapp 폴더 안에 jsp파일, sql파일, css 파일을 만들어 줍니다.
 
 jsp 파일은 미리 다 만들어 놓는것이 편합니다.
