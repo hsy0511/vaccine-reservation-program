@@ -429,7 +429,7 @@ function checkVal() {
 
 	Connection conn = DBConnect.getConnection();
 	PreparedStatement pstmt = conn.prepareStatement(sql);
-	
+	// String형으로 받아와서 parameter 값으로 넣어준다.
 	pstmt.setString(1, request.getParameter("rno"));
 	pstmt.setString(2, request.getParameter("jno"));
 	pstmt.setString(3, request.getParameter("hcode"));
