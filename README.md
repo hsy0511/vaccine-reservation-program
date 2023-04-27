@@ -694,7 +694,7 @@ sum += Integer.parseInt(rs.getString(3));
 
 모든 페이지를 완성했으면 시험지 문제대로 페이지가 완성되게끔 css를 작성해줍니다.
 
-### style.css
+### 8. style.css
 
 ```css
 @charset "UTF-8";
@@ -781,8 +781,82 @@ sum += Integer.parseInt(rs.getString(3));
 	padding: 5px 20px;
 }
 ```
- 
- 모든 페이지가 정상 작동하는지 검토합니다.
+### 9. 쿼리문 설명
+#### vr.jsp
+```sql
+select max(RESVNO) from TBL_VACCRESV_202108
+```
+백신예약 테이블에서 예약번호가 가장 큰 번호를 조회한다.
+
+- max : 최대값을 불러드린다.
+#### vrj_p
+```sql
+select v.RESVNO
+,j.NAME
+,case substr(v.jumin, 8, 1)
+	when '1' then '남'
+	when '2' then '여'
+end as gender
+```
+주민번호 8번째 자리가 1이면 남 2면 여 라고 나오게 조회 한다.
+
+- case/when/then : when 조건을 만족할 때 then 조건을 반환함.  
+
+- substr : 문자에서 몇번째부터 몇개 문자를 뽑아냄.
+
+- as : 별칭(가명)
+```sql
+to_char(v.RESVDATE,'yyyy"년"mm"월"dd"일"') as  RESVDATE
+```
+날짜를 "2023년 04월 27일" 이런식으로 나타냄
+
+- to_char : 날짜, 숫자 등의 값을 문자열로 변환함.
+
+```sql
+substr(to_char(v.RESVTIME, 'FM0000'),1,2) 
+|| ':' || substr(to_char(v.RESVTIME, 'FM0000'),3,2) as RESVTIME
+```
+시간을 문자로 12:12 이런식으로 나타냄
+
+- FM0000 : 숫자를 문자형으로 나타낼때 사용함
+- || '' || : ''안에 들어가는 문자를 전에 데이터와 합친다.
+
+```sql
+from TBL_VACCRESV_202108 v, TBL_JUMIN_202108 j, TBL_HOSP_202108 h
+where v.JUMIN = j.JUMIN and v.hospcode = h.hospcode and v.RESVNO ='20210001'
+```
+3개에 테이블을 join시켜 예약번호 20210001번에 대한 정보를 조회함
+
+- join : 2개이상에 테이블을 연결하여 데이터를 조회한다.
+
+```sql
+select h.HOSPADDR,
+case h.hospaddr 
+when '10' then '서울' 
+when '20' then '대전' 
+when '30' then '대구' 
+when '40' then '광주' end as hosparea,
+count(v.HOSPCODE) 
+from TBL_HOSP_202108 h, TBL_VACCRESV_202108 v 
+where h.HOSPCODE = v.HOSPCODE(+) 
+group by HOSPADDR 
+order by HOSPADDR
+```
+병원테이블과 백신예약테이블을 조인 시켜 병원주소가 10이면 서울, 20이면 대전, 30이면 대구, 40이면 광주가 나오게끔 하고
+
+그 지역에 예약건수를 병원코드를 더한 후 병원 주소로 정렬하여 오름차순으로 조회한다.
+
+- h.HOSPCODE = v.HOSPCODE(+) : h.HOSPCODE + v.HOSPCODE
+- count : 데이터의 개수를 숫자로 나타냄
+- group by : 특정 컬럼을 기준으로 집계한다.
+- order by : 정렬 기준 (기본값과 asc는 오름차순, desc는 내림차순)
+
+※ 집계 : 표 형식 데이터를 줄이고 요약하는 과정
+### 10. css 설명
+
+
+### 11. 작동
+모든 페이지가 정상 작동하는지 검토합니다.
  
 ![image](https://user-images.githubusercontent.com/104752580/234508064-730cff0f-f088-471d-9928-3734cfcd944d.png)
 ![image](https://user-images.githubusercontent.com/104752580/234508121-31d1a8ea-b8e6-4250-842a-611c877846bd.png)
