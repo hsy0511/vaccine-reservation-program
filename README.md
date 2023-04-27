@@ -98,6 +98,7 @@ css를 사용하기 위해서 미리 class를 설정해 두는게 좋습니다.
 </head>
 <body>
 <header class = "header">
+<%-- h1이라는 제목 태그에 글을 작성한다. --%> 
 <h1>(과정평가형 정보처리산업기사) 백신예약 프로그램 ver 202109</h1>
 </header>
 </body>
@@ -120,6 +121,7 @@ nav 태그에는 백신예약, 백신예약조회, 백신예약현황, 홈으로
 </head>
 <body>
 <nav class = "nav">
+<%-- 전체목록태그 ul 안에 li, a(링크태그) 태그를 이용하여 하나씩 링크가 있는 목록으로 생성해준다.   --%>
 <ul>
 <li><a href="vr.jsp">백신예약</a></li>
 <li><a href="vrj.jsp">백신예약조회</a></li>
@@ -167,6 +169,7 @@ footer 태그에는 HRDKOREA Copyrightc2015 All rights reserved. Human Resources
 </head>
 <body>
 <footer class = "footer">
+<%-- p태그로 글을 작성한다. --%>
 <p>HRDKOREA Copyrightc2015 All rights reserved. Human Resources Development Service of Korea</p>
 </footer>
 </body>
@@ -187,6 +190,7 @@ footer 태그에는 HRDKOREA Copyrightc2015 All rights reserved. Human Resources
 <title>Insert title here</title>
 </head>
 <body>
+<%-- include를 이용하여 페이지를 복사해옴. --%>
 <header>
 <jsp:include page="header.jsp"></jsp:include>
 </header>
@@ -284,19 +288,23 @@ html 태그를 이용하여 테이블을 만듭니다.
 
 vr_p.jsp 페이지와 연동하기 위해서 form를 사용해야 합니다.
 ```jsp
+<%-- 페이지를 DB와 연결시킴 --%>
 <%@ page import="DB.DBConnect" %>
+<%-- sql에 모든 라이브러리를 가져옴 --%>
 <%@ page import="java.sql.*" %>
+<%-- 페이지의 코드 타입은 html로 설정하고 문자 코드는 utf-8로 설정함 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-
+	// 쿼리문 조회 한다. 
 	String sql = "select max(RESVNO) from TBL_VACCRESV_202108";
-
+	// DB 연결
 	Connection conn = DBConnect.getConnection();
 	PreparedStatement pstmt = conn.prepareStatement(sql);
 	ResultSet rs = pstmt.executeQuery();
-	
+	// 데이터에서 첫번째행에서 마지막 행까지를 추출
 	rs.next();
+	// num 값을 데이터 1번에 값에 1를 더해준 값으로 지정한다.
 	int num = rs.getInt(1)+1;
 
 %>
@@ -307,7 +315,9 @@ vr_p.jsp 페이지와 연동하기 위해서 form를 사용해야 합니다.
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
+// 유효성 검사 코드 
 function checkVal() {
+	// 값이 입력되지 않았을 때 입력하라고 문구를 띄워준 후 입력해야하는 값에 포커스가 이동한다.
 	if(!document.data.rno.value){
 		alert("예약번호를 입력하세요.");
 		data.rno.focus();
@@ -346,11 +356,13 @@ function checkVal() {
 <jsp:include page="nav.jsp"></jsp:include>
 </nav>
 <section class = "section">
+<%-- submit 버튼을 입력했을 때 action 값으로 이동 시켜주고 checkVal() 함수를 리터한다. --%>
 <form name = "data" method="post" action="vr_p.jsp" onsubmit="return checkVal()">
 <h1>백신 예약</h1>
 <table class = "table">
 <tr>
 <td>예약번호</td>
+<%-- 예약번호 입력값에 num 값을 자동으로 반환하고 수정이 불가하도록 만들었다. --%>
 <td><input type = "text" name = "rno" value="<%= num %>" readonly> 예)20210011</td>
 </tr>
 <tr>
@@ -359,6 +371,7 @@ function checkVal() {
 </tr>
 <tr>
 <td>백신코드</td>
+<%-- 백신코드는 셀렉트 박스로 만들었다. --%>
 <td><select name = "vcode">
 <option value = "">백신선택</option>
 <option value = "V001">A백신</option>
@@ -368,6 +381,7 @@ function checkVal() {
 </tr>
 <tr>
 <td>병원코드</td>
+<%-- 병원코드는 라이오 박스로 만들었다.  --%>
 <td><input type ="radio" name = "hcode" value ="H001">가_병원
 <input type ="radio" name = "hcode" value ="H002">나_병원
 <input type ="radio" name = "hcode" value ="H003">다_병원
@@ -385,6 +399,7 @@ function checkVal() {
 <tr>
 <td colspan="2" align="center">
 <input type = "submit" value="등록">
+<%-- 리셋 타입을 통해 버튼을 누르면 테이블의 데이터가 초기화 되게 만들었다. --%>
 <input type = "reset" value="취소">
 </td>
 </tr>
@@ -409,6 +424,7 @@ function checkVal() {
     pageEncoding="UTF-8"%>
 <%
 
+	// vr.jsp에서 입력한 데이터 값을 백신 예약 테이블에 넣어준다. 
 	String sql = "insert into TBL_VACCRESV_202108 values(?,?,?,?,?,?)";
 
 	Connection conn = DBConnect.getConnection();
@@ -433,6 +449,7 @@ function checkVal() {
 <title>Insert title here</title>
 </head>
 <body>
+<%-- index 페이지로 이동시킨다. --%>
 <jsp:forward page="index.jsp"></jsp:forward>
 </body>
 </html>
@@ -486,6 +503,7 @@ function checkVal2() {
 <tr>
 <td colspan="2" align="center">
 <input type="submit" value="조회하기">
+<%-- onclick을 통해서 버튼을 누르면 index 페이지로 이동하게 한다. --%>
 <input type="button" value="홈으로"  onclick="location.href='index.jsp'">
 </table>
 </form>
@@ -512,11 +530,11 @@ function checkVal2() {
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	
+	// reno를 rno로 지정함
  	int reno = Integer.parseInt(request.getParameter("rno"));
-	
+	// StringBuffer를 통해서 문자열을 추가하거나 변경 할 준비를 한다.
 	StringBuffer sb = new StringBuffer();
-	
+	// StringBuffer를 통해서 sql 쿼리문을 붙여서 추가한다.
 	sb.append(" select v.RESVNO                                                                 ")
     .append(" ,j.NAME                                                                       ")
     .append(" ,case substr(v.jumin, 8, 1)                                                   ")
@@ -546,7 +564,7 @@ function checkVal2() {
     .append(" from TBL_VACCRESV_202108 v, TBL_JUMIN_202108 j, TBL_HOSP_202108 h               ")
     .append(" where v.JUMIN = j.JUMIN and v.hospcode = h.hospcode                             ")
     .append(" and v.RESVNO =").append(reno);
-	
+	// sql을 쿼리문으로 지정한다.
 	String sql = sb.toString();
 
 	Connection conn = DBConnect.getConnection();
@@ -569,6 +587,7 @@ function checkVal2() {
 <jsp:include page="nav.jsp"></jsp:include>
 </nav>
 <section class = "section">
+<%-- if문을 통해서 페이지에 조건을 입력한다. --%>
 <% if(rs.next()){ %>
 <h1>예약번호 <%= reno %>님의 예약 조회</h1>
 <table class = "table">
@@ -576,6 +595,7 @@ function checkVal2() {
 <td>예약번호</td><td>성명</td><td>성별</td><td>병원이름</td><td>예약날짜</td><td>예약시간</td><td>백신코드</td><td>병원지역</td>
 </tr>
 <tr>
+<%-- 데이터에 첫번째 값부터 여덟번째 값까지 반환한다. --%>
 <td><%= rs.getString(1) %></td>
 <td><%= rs.getString(2) %></td>
 <td><%= rs.getString(3) %></td>
@@ -586,8 +606,10 @@ function checkVal2() {
 <td><%= rs.getString(8) %></td>
 </tr>
 </table>
+<%-- 조건이 참이면 예약 정보를 보여준다. --%>
 <p align="center"><input type="button" value="돌아가기" onclick="location.href='vrj.jsp'"></p>
 <%}else{ %>
+<%-- 조건이 거짓이면 예약정보가 없다고 표기한다. --%>
 <p align="center">예약번호 <%= reno %>번의 정보가 없습니다.</p>
 <p align="center"><input type="button" value="홈으로"  onclick="location.href='index.jsp'"></p>
 <%} %>
@@ -614,14 +636,15 @@ function checkVal2() {
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-
+	// 
 	String sql = "select h.HOSPADDR, case h.hospaddr when '10' then '서울' when '20' then '대전' when '30' then '대구' when '40' then '광주' end as hosparea,count(v.HOSPCODE) from TBL_HOSP_202108 h, TBL_VACCRESV_202108 v where h.HOSPCODE = v.HOSPCODE(+) group by HOSPADDR order by HOSPADDR";
 
 	Connection conn = DBConnect.getConnection();
 	PreparedStatement pstmt = conn.prepareStatement(sql);
 	ResultSet rs = pstmt.executeQuery();
 	
-	int sum = 0;;
+	// sum을 0으로 지정해놓는다
+	int sum = 0;
 
 
 %>
@@ -645,17 +668,20 @@ function checkVal2() {
 <tr>
 <td>병원지역</td><td>병원지역명</td><td>접종예약건수</td>
 </tr>
+<%-- 반복문을 사용하여 테이블 행,열 생성 --%>
 <% while(rs.next()){ %>
 <tr>
 <td><%= rs.getString(1) %></td>
 <td><%= rs.getString(2) %></td>
 <td><%= rs.getString(3) %></td>
 <%
+// sum 값을 데이터의 3번째 값과 sum 값을 더한 값으로 지정한다.
 sum += Integer.parseInt(rs.getString(3));
 } %>
 </tr>
 <tr>
 <td colspan="2" align="center">총합</td>
+<%-- sum 값을 나타낸다. --%>
 <td><%= sum %></td>
 </table>
 </section>
