@@ -718,7 +718,6 @@ sum += Integer.parseInt(rs.getString(3));
 	background-color: blue;
 	text-align: center;
 	color: white;
-	font-size: 20pt;
 }
 
 .nav{
@@ -785,6 +784,26 @@ sum += Integer.parseInt(rs.getString(3));
 	padding: 5px 20px;
 }
 ```
+## css 설명
+### style.css
+사용된 css 함수들을 알아보겠다.
+- list-style : 항목 모양의 종류 설정
+- padding : 요소의 네 방향 안쪽 여백 영역 설정
+- margin : 요소의 네 방향 바깥 여백 영역 설정
+- position : 문서 상에 요소를 배치하는 방법
+- top : 상단에서 밑으로 얼마나 내릴지 설정
+- width : 너비 설정
+- height : 높이 설정
+- line-height : 줄 높이 설정
+- background-color : 배경 색 설정
+- text-align : 텍스트 정렬 방향 설정
+- color : 글자 색 설정
+- float : 주변의 다른 요소들과 자연스럽게 어울리도록 설정
+- text-decoration : 텍스트를 꾸밀 수 있게 해주는 속성 설정
+- overflow : 주어진 공간이 모자라 넘치는 컨텐츠를 어떻게 보여줄지를 설정
+- bottom : 하단에서 위로 얼마나 올릴지 설정
+- border : 요소의 테두리 설정
+- border-collapse : 테이블 또는 셀의 테두리선 표시방법을 지정하는 속성
 ## 쿼리문 설명
 ### vr.jsp
 ```sql
