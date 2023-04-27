@@ -640,7 +640,7 @@ function checkVal2() {
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	// 
+	// 쿼리문을 조회한다.
 	String sql = "select h.HOSPADDR, case h.hospaddr when '10' then '서울' when '20' then '대전' when '30' then '대구' when '40' then '광주' end as hosparea,count(v.HOSPCODE) from TBL_HOSP_202108 h, TBL_VACCRESV_202108 v where h.HOSPCODE = v.HOSPCODE(+) group by HOSPADDR order by HOSPADDR";
 
 	Connection conn = DBConnect.getConnection();
