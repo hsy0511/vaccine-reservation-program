@@ -766,4 +766,3 @@ sum += Integer.parseInt(rs.getString(3));
 ![image](https://user-images.githubusercontent.com/104752580/234508393-10281f5a-7238-41b2-856c-6e4902963d9c.png)
 
 
-
