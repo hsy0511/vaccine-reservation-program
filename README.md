@@ -86,7 +86,7 @@ jsp 파일을 다 만든 후 파일 마다 css 연결 태그를 작성해줍니�
 ![image](https://user-images.githubusercontent.com/104752580/234483634-e8ed88af-394c-481b-be0d-416187ac0d32.png)
 
 ### 1. header.jsp
-먼저 헤더 태그에는 (과정평가형 정보처리산업기사) 백신예약 프로그램 ver 202109를 제목 태그로 만들어야 합니다.
+먼저 헤더 에는 (과정평가형 정보처리산업기사) 백신예약 프로그램 ver 202109를 제목 태그로 만들어야 합니다.
 
 css를 사용하기 위해서 미리 class를 설정해 두는게 좋습니다.
 
@@ -109,7 +109,7 @@ css를 사용하기 위해서 미리 class를 설정해 두는게 좋습니다.
 </html>
 ```
 ### 2. nav.jsp
-nav 태그에는 백신예약, 백신예약조회, 백신예약현황, 홈으로 4개에 링크가 있는 목록태그를 만들어야 합니다.
+nav 페이지에는 백신예약, 백신예약조회, 백신예약현황, 홈으로 4개에 링크가 있는 목록태그를 만들어야 합니다.
 
 이때 링크는 자신이 만들 페이지로 걸어두어야 합니다.
 
@@ -138,7 +138,7 @@ nav 태그에는 백신예약, 백신예약조회, 백신예약현황, 홈으로
 ```
 ### 3. section.jsp
 
-section 태그에는 아무것도 없기 때문에 클래스만 만들어 놓습니다.
+section 페이지에는 아무것도 없기 때문에 클래스만 만들어 놓습니다.
 
 ```jsp
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -159,7 +159,7 @@ section 태그에는 아무것도 없기 때문에 클래스만 만들어 놓습
 ```
 ### 4. footer.jsp
 
-footer 태그에는 HRDKOREA Copyrightc2015 All rights reserved. Human Resources Development Service of Korea를 입력해줍니다.
+footer 페이지에는 HRDKOREA Copyrightc2015 All rights reserved. Human Resources Development Service of Korea를 입력해줍니다.
 
 ```jsp
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -181,7 +181,7 @@ footer 태그에는 HRDKOREA Copyrightc2015 All rights reserved. Human Resources
 ```
 
 ### 5. index.jsp
-이제 index.jsp 파일에 include 액션태그를 사용하여 header.jsp, nav.jsp, section.jsp, footer.jsp 4개의 파일들을 불러드립니다.
+이제 index.jsp 페이지에 include 액션태그를 사용하여 header.jsp, nav.jsp, section.jsp, footer.jsp 4개의 파일들을 불러드립니다.
 
 ```jsp
 <%@ page language="java" contentType="text/html; charset=UTF-8"
