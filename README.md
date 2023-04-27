@@ -852,10 +852,8 @@ order by HOSPADDR
 - order by : 정렬 기준 (기본값과 asc는 오름차순, desc는 내림차순)
 
 ※ 집계 : 표 형식 데이터를 줄이고 요약하는 과정
-### 10. css 설명
 
-
-### 11. 작동
+### 10. 작동
 모든 페이지가 정상 작동하는지 검토합니다.
  
 ![image](https://user-images.githubusercontent.com/104752580/234508064-730cff0f-f088-471d-9928-3734cfcd944d.png)
